@@ -43,6 +43,6 @@ export default function CharacterCard(props) {
     </Card>
   );
 
-export default function CharacterCard() {
-  return <span>todo: character</span>;
+// export default function CharacterCard() {
+//   return <span>todo: character</span>;
 }

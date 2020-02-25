@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from axios;
-import CharacterCard from "./CharacterCard";
+import CharacterCard from "./CharacterCard"
+import axios from 'axios';
 import styled from "styled-components";
 
-export default function CharacterList() {
+export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
     const [character, setCharacter] = useState([]);
 
@@ -13,7 +13,7 @@ export default function CharacterList() {
 
         //adding API requests
         axios
-        .get('https://rick-api.herokuapp.com/api/')
+        .get('https://rickandmortyapi.com/api/character/')
 
         .then(response => {
           setCharacter(response.data.results)

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
-import axios from axios;
 
 export default function SearchForm() {
 
-const[data, setData] = useState([]);
-const[query, setQuery] = useState("");
+  const [data, setData] = useState([]);
+const [query, setQuery] = useState("");
 
 useEffect(() => {
-  axios.get("https://rick-api.herokuapp.com/api/")
+  axios.get("https://rickandmortyapi.com/api/character/")
   .then (response =>{
       const characters = response.data.results.filter(character =>
       character.name.toLowerCase().includes(query.toLowerCase())
